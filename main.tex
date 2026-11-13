@@ -60,7 +60,44 @@
 \date{\today}
 
 \begin{document}
-\maketitle
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\fontsize{22}{26}\selectfont\bfseries LINE Messaging API 教學文件製作\par}
+    \vspace{1.5cm}
+
+    \begin{tabular}{ll}
+        \textbf{座號} & 23 \\
+        \textbf{班級} & 資管三C \\
+        \textbf{學號} & 413630152 \\
+        \textbf{姓名} & 曾彥綸 \\
+    \end{tabular}
+
+    \vspace{2cm}
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|p{6.2cm}|p{1.8cm}|p{1.8cm}|p{5.5cm}|}
+        \hline
+        \textbf{評分項目} & \textbf{配分} & \textbf{得分} & \textbf{評分說明} \\
+        \hline
+        LATEX 頁數達標 & 10\% &  & 文件達五頁以上，內容充實、有條理 \\
+        \hline
+        LATEX 排版美觀與結構 & 15\% &  & 章節層次清晰，目錄可正常顯示 \\
+        \hline
+        LATEX 進行 Github 版本控管 & 15\% &  & 文件已成功上傳至 Github，並有良好的版本控制，至少有 3 個 effective commit \\
+        \hline
+        LATEX 格式正確 & 20\% &  & 文件可正常編譯 PDF，段落、圖片、程式碼（需自動產生行號）排版完善 \\
+        \hline
+        LATEX 內容完整性 & 20\% &  & 是否完整描述註冊過程與設定步驟，具技術深度 \\
+        \hline
+        LATEX 程式碼品質與解說 & 20\% &  & 程式碼可運作並有充分註解，並標註行號 \\
+        \hline
+    \end{tabular}
+
+    \vfill
+    \begin{flushright}
+        \small \today
+    \end{flushright}
+\end{titlepage}
 
 \begin{abstract}
 \noindent 本文件說明 LINE Messaging API 的註冊流程、Channel 設定、Webhook 設定與訊息互動機制，並提供 Python 範例說明如何接收與回覆訊息。內容涵蓋從開發者帳戶註冊到實際推播與自動回覆的完整流程，適合作為 LINE Bot 初學者的技術手冊。
