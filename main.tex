@@ -1,33 +1,76 @@
 % !TEX program = xelatex
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper,12pt]{report}
+\usepackage[margin=2.5cm]{geometry}
 \usepackage{fontspec}
 \usepackage{xeCJK}
-\setCJKmainfont[AutoFakeBold=2, AutoFakeSlant=0.2]{標楷體}
-\setCJKmonofont[AutoFakeBold=2, AutoFakeSlant=0.2]{SimSun}
+\setCJKmainfont[AutoFakeBold=2,AutoFakeSlant=0.2]{Microsoft JhengHei}
+\setCJKsansfont[AutoFakeBold=2]{Microsoft JhengHei}
+\setCJKmonofont[AutoFakeBold=2]{Microsoft JhengHei}
 \setmainfont{Times New Roman}
 \XeTeXlinebreaklocale "zh"
 \XeTeXlinebreakskip = 0pt plus 1pt
 
-\renewcommand\contentsname{目錄}
-\renewcommand\bibname{參考資料}
-\renewcommand\figurename{圖}
-\renewcommand\tablename{表}
-\renewcommand\chaptername{第}
-\renewcommand\thechapter{\arabic{chapter}章}
-\renewcommand\thesection{\arabic{chapter}.\arabic{section}}
-\renewcommand\thesubsection{\thesection.\arabic{subsection}}
-\makeatletter
-\renewcommand*{\l@chapter}[2]{\@dottedtocline{0}{0em}{3em}{#1}{#2}}
-\renewcommand*{\l@section}[2]{\@dottedtocline{1}{1.5em}{3em}{#1}{#2}}
-\renewcommand*{\l@subsection}[2]{\@dottedtocline{2}{3.8em}{4em}{#1}{#2}}
-\makeatother
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{titlesec}
 
-\title{從 TeX 到 LaTeX：理解數位排版的起點}
-\author{LaTeX 教學講義}
+\definecolor{codebg}{RGB}{245,247,250}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{codebg},
+    breaklines=true,
+    frame=single,
+    framerule=0.6pt,
+    rulecolor=\color{black!25},
+    showstringspaces=false,
+    columns=fullflexible,
+    keepspaces=true,
+    aboveskip=12pt,
+    belowskip=12pt,
+    captionpos=b
+}
+
+\renewcommand{\contentsname}{目錄}
+\renewcommand{\listfigurename}{圖目錄}
+\renewcommand{\listtablename}{表目錄}
+\renewcommand{\bibname}{參考資料}
+\renewcommand{\chaptername}{第}
+\renewcommand{\figurename}{圖}
+\renewcommand{\tablename}{表}
+\renewcommand{\lstlistingname}{程式碼}
+\renewcommand{\lstlistlistingname}{程式目錄}
+
+\title{LINE Messaging API 註冊申請與實作教學}
+\author{資工系學生}
 \date{\today}
 
 \begin{document}
 \maketitle
+
+\begin{abstract}
+\noindent 本文件說明 LINE Messaging API 的註冊流程、Channel 設定、Webhook 設定與訊息互動機制，並提供 Python 範例說明如何接收與回覆訊息。內容涵蓋從開發者帳戶註冊到實際推播與自動回覆的完整流程，適合作為 LINE Bot 初學者的技術手冊。
+\end{abstract}
+
 \tableofcontents
+\listoffigures
+\listoftables
+\lstlistoflistings
+
 \input{chap1/chap1.tex}
+
 \end{document}
